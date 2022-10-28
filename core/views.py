@@ -16,7 +16,6 @@ from django.views.generic import ListView, DetailView, View
 from .forms import CheckoutForm, CouponForm, RefundForm, PaymentForm, SubscriptionForm
 from .models import Item, OrderItem, Order, Address, Payment, Coupon, Refund, UserProfile, UserAccount
 
-stripe.api_key = settings.STRIPE_SECRET_KEY
 
 
 def create_ref_code():
