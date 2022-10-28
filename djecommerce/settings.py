@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os
 from pathlib import Path
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 import dj_database_url
 from decouple import config
 
@@ -39,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary',
     'django.contrib.sites',
     'allauth',
     'crispy_forms',
@@ -142,6 +146,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # CRISPY FORMS
+
+cloudinary.config( 
+  cloud_name = "dc5qghrp3", 
+  api_key = "828472683792999", 
+  api_secret = "sTSUq51SrULNBtFMfZw3wyOvziw" 
+)
+
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 

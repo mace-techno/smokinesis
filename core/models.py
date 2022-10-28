@@ -3,19 +3,16 @@ from django.conf import settings
 from django.db import models
 from django.db.models import Sum
 from django.shortcuts import reverse
+from cloudinary.models import CloudinaryField
 from django_countries.fields import CountryField
 
 
 CATEGORY_CHOICES = (
-    ('S', 'Shirt'),
-    ('SW', 'Sport wear'),
-    ('OW', 'Outwear')
+    ('S', 'Smoke'),
 )
 
 LABEL_CHOICES = (
-    ('P', 'primary'),
-    ('S', 'secondary'),
-    ('D', 'danger')
+    ('T', 'Top'),
 )
 
 ADDRESS_CHOICES = (
@@ -23,11 +20,6 @@ ADDRESS_CHOICES = (
     ('S', 'Shipping'),
 )
 
-LABEL_CHOICES = (
-    ('P', 'primary'),
-    ('S', 'secondary'),
-    ('D', 'danger')
-)
 
 SUBSCRIBTION_CHOICES = (
     ('oneweek', (
@@ -103,7 +95,7 @@ class Item(models.Model):
     label = models.CharField(choices=LABEL_CHOICES, max_length=1)
     slug = models.SlugField()
     description = models.TextField()
-    image = models.ImageField()
+    image = CloudinaryField('image')
 
     def __str__(self):
         return self.title
