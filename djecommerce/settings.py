@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-tlf8(@5zp0cu+o3-z!9po%f=w%5p$%dh09i2owhjvn7saoh@g7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'smokekinesis.com', 'wwww.smokekinesis.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'smokekinesis.com', 'wwww.smokekinesis.com','smokebando.herokuapp.com']
 
 
 # Application definition
@@ -126,7 +126,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'staticfiles')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
 
